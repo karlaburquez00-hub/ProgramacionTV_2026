@@ -82,7 +82,7 @@ public class Ventana extends JFrame {
                 String usuario = txtUsuario.getText();
                 String password = new String(txtPassword.getPassword());
 
-                if (usuario.equals("Jesus") && password.equals("12345")) {   //usuario y contraseña predeterminada
+                if (usuario.equals("Karla") && password.equals("12345")) {   //usuario y contraseña predeterminada
                     JOptionPane.showMessageDialog(null, "Bienvenido");
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario o contraseña incorrectos");
