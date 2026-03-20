@@ -6,7 +6,32 @@ import java.awt.event.*;
 
 public class LoginUI extends JFrame {
 
-    public LoginUI() {
+	public void router (String target) {
+		if(target.equals("login"))
+				 this.login();
+		
+	if(target.equals("registro"))
+	this.registro();
+		
+		this.repaint();
+		this.revalidate();
+				
+	}
+
+	public void login() {
+		
+	}
+
+
+	public void registro() {
+		
+	}
+
+	public void users() {
+		
+	}   
+	
+	public LoginUI() {
 
         setTitle("User Login");
         setSize(420,520);
@@ -178,3 +203,5 @@ class SignUpUI extends JFrame{
         setVisible(true);
     }
 }
+
+
