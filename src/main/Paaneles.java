@@ -19,16 +19,16 @@ public class Paaneles extends JFrame {
         JMenu ayuda = new JMenu("Ayuda");
         JMenu cuenta = new JMenu("Cuenta");
 
-        // Opciones dentro de "Cuenta"
-        JMenuItem acceder = new JMenuItem("Acceder");
-        JMenuItem registrar = new JMenuItem("Registrar");
+        // Ítems del menú
+        JMenuItem iniciarSesion = new JMenuItem("Iniciar sesión");
+        JMenuItem registrarse = new JMenuItem("Registrarse");
 
-        // Acciones de menú que cambian paneles
-        acceder.addActionListener(e -> router("login"));
-        registrar.addActionListener(e -> router("registro"));
+        // Eventos del menú
+        iniciarSesion.addActionListener(e -> router("login"));
+        registrarse.addActionListener(e -> router("registro"));
 
-        cuenta.add(acceder);
-        cuenta.add(registrar);
+        cuenta.add(iniciarSesion);
+        cuenta.add(registrarse);
 
         barra.add(archivo);
         barra.add(ayuda);
@@ -42,7 +42,7 @@ public class Paaneles extends JFrame {
         this.setVisible(true);
     }
 
-    // Método router: controla qué panel mostrar
+    // Método router
     public void router(String target) {
         this.getContentPane().removeAll();
 
@@ -56,7 +56,7 @@ public class Paaneles extends JFrame {
         this.revalidate();
     }
 
-    // Panel de Login (fondo blanco)
+    // Panel Login
     public void login() {
         JPanel login_container = new JPanel();
         login_container.setBounds(250, 100, 400, 400);
@@ -89,15 +89,10 @@ public class Paaneles extends JFrame {
         access_btn.setBounds(100, 250, 200, 40);
         login_container.add(access_btn);
 
-        JButton goToRegister = new JButton("Ir a registro");
-        goToRegister.setBounds(100, 300, 200, 30);
-        goToRegister.addActionListener(e -> router("registro"));
-        login_container.add(goToRegister);
-
         this.add(login_container);
     }
 
-    // Panel de Registro (fondo anaranjado)
+    // Panel Registro
     public void registro() {
         JPanel rgs_container = new JPanel();
         rgs_container.setBounds(250, 100, 400, 400);
@@ -129,11 +124,6 @@ public class Paaneles extends JFrame {
         JButton register_btn = new JButton("Registrar");
         register_btn.setBounds(100, 250, 200, 40);
         rgs_container.add(register_btn);
-
-        JButton goToLogin = new JButton("Ir a login");
-        goToLogin.setBounds(100, 300, 200, 30);
-        goToLogin.addActionListener(e -> router("login"));
-        rgs_container.add(goToLogin);
 
         this.add(rgs_container);
     }
